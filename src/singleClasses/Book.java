@@ -1,6 +1,6 @@
-package authorsAndBooks;
+package singleClasses;
 
-public class Book extends Author{
+public class Book {
     private String name;
     private Author[] authors;
     private double price;

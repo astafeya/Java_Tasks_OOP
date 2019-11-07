@@ -1,4 +1,4 @@
-package pointsAndTriangles;
+package singleClasses;
 
 public class MyPoint {
     private int x = 0;
