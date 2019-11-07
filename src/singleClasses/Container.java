@@ -43,4 +43,26 @@ public class Container {
     public String toString() {
         return "Container[(" + x1 + ", " + y1 + "),(" + x2 + ", " + y2 + ")]";
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Container)) {
+            return false;
+        }
+        Container container = (Container) obj;
+        return x1 == container.x1 && y1 == container.y1 && x2 == container.x2 && y2 == container.y2;
+    }
+
+    @Override
+    public int hashCode() {
+        int code = 17;
+        code = 31 * code + x1;
+        code = 31 * code + y1;
+        code = 31 * code + x2;
+        code = 31 * code + y2;
+        return code;
+    }
 }

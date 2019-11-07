@@ -51,4 +51,27 @@ public class Employee {
     public String toString() {
         return "Employee[id = " + id + ", name = " + firstName + " " + lastName + ", salary = " + salary + "]";
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Employee)) {
+            return false;
+        }
+        Employee employee = (Employee) obj;
+        return id == employee.id && firstName.equals(employee.firstName) && lastName.equals(employee.lastName) &&
+                salary == employee.salary;
+    }
+
+    @Override
+    public int hashCode() {
+        int code = 17;
+        code = 31 * code + id;
+        code = 31 * code + salary;
+        code = 31 * code + firstName.hashCode();
+        code = 31 * code + lastName.hashCode();
+        return code;
+    }
 }

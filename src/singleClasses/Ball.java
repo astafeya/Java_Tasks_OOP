@@ -72,4 +72,27 @@ public class Ball {
     public String toString() {
         return "Ball[(" + x + ", " + y + "), speed = (" + xDelta + ", " + yDelta + ")]";
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Ball)) {
+            return false;
+        }
+        Ball ball = (Ball) obj;
+        return x == ball.x && y == ball.y && radius == ball.radius && xDelta == ball.xDelta && yDelta == ball.yDelta;
+    }
+
+    @Override
+    public int hashCode() {
+        int code = 17;
+        code = 31 * code + (int)x;
+        code = 31 * code + (int)y;
+        code = 31 * code + radius;
+        code = 31 * code + (int)xDelta;
+        code = 31 * code + (int)yDelta;
+        return code;
+    }
 }

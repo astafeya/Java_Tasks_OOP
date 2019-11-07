@@ -41,4 +41,24 @@ public class Circle {
         double area = Math.PI * Math.pow(this.radius, 2);
         return area;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Circle)) {
+            return false;
+        }
+        Circle circle = (Circle) obj;
+        return radius == circle.radius && color.equals(circle.color);
+    }
+
+    @Override
+    public int hashCode() {
+        int code = 17;
+        code = 31 * code + (int)radius;
+        code = 31 * code + color.hashCode();
+        return  code;
+    }
 }

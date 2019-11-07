@@ -40,4 +40,24 @@ public class Rectangle {
     public String toString() {
         return "Rectangle[length = " + this.length + ", width = " + this.width + "]";
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Rectangle)) {
+            return false;
+        }
+        Rectangle rectangle = (Rectangle) obj;
+        return length == rectangle.length && width == rectangle.width;
+    }
+
+    @Override
+    public int hashCode() {
+        int code = 17;
+        code = 31 * code + (int)length;
+        code = 31 * code + (int)width;
+        return code;
+    }
 }

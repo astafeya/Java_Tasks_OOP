@@ -44,4 +44,25 @@ public class MyTriangle extends MyPoint{
 
         return type;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof MyTriangle)) {
+            return false;
+        }
+        MyTriangle triangle = (MyTriangle) obj;
+        return this.v1.equals(triangle.v1) && this.v2.equals(triangle.v2) && this.v3.equals(triangle.v3);
+    }
+
+    @Override
+    public int hashCode() {
+        int code = 17;
+        code = 31 * code + v1.hashCode();
+        code = 31 * code + v2.hashCode();
+        code = 31 * code + v3.hashCode();
+        return code;
+    }
 }

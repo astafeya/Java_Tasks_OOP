@@ -5,6 +5,9 @@ public class MyPolynomial {
 
     public MyPolynomial(double... coeffs) {
         this.coeffs = new double[coeffs.length];
+        for (int i = 0; i < this.coeffs.length; i++) {
+            this.coeffs[i] = coeffs[i];
+        }
     }
 
     public int getDegree() {
@@ -67,5 +70,35 @@ public class MyPolynomial {
 
         MyPolynomial answer = new MyPolynomial(answerCoeffs);
         return answer;
+
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof MyPolynomial)) {
+            return false;
+        }
+        MyPolynomial polynomial = (MyPolynomial) obj;
+        if (coeffs.length != polynomial.coeffs.length) {
+            return false;
+        }
+        for (int i = 0; i < coeffs.length; i++) {
+            if (coeffs[i] != polynomial.coeffs[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int code = 17;
+        for (int i = 0; i < coeffs.length; i++) {
+            code = 31 * code + (int)coeffs[i];
+        }
+        return code;
     }
 }

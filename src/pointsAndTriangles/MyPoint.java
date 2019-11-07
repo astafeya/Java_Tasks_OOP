@@ -59,4 +59,24 @@ public class MyPoint {
         double answer = Math.sqrt(Math.pow((this.x), 2) + Math.pow((this.y), 2));
         return answer;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof MyPoint)) {
+            return false;
+        }
+        MyPoint point = (MyPoint) obj;
+        return x == point.x && y == point.y;
+    }
+
+    @Override
+    public int hashCode() {
+        int code = 17;
+        code = 31 * code + x;
+        code = 31 * code + y;
+        return code;
+    }
 }

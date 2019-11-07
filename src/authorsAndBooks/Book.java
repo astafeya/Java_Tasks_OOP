@@ -62,4 +62,36 @@ public class Book extends Author{
         }
         return st;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Book)) {
+            return false;
+        }
+        Book book = (Book) obj;
+        if (this.authors.length != book.authors.length) {
+            return false;
+        }
+        for (int i = 0; i < this.authors.length; i++) {
+            if (!(this.authors[i].equals(book.authors[i]))) {
+                return false;
+            }
+        }
+        return name == book.name && price == book.price && qty == book.qty;
+    }
+
+    @Override
+    public int hashCode() {
+        int code = 17;
+        code = 31 * code + name.hashCode();
+        code = 31 * code + (int)price;
+        code = 31 * code + qty;
+        for (int i = 0; i < authors.length; i++) {
+            code = 31 * code + authors[i].hashCode();
+        }
+        return code;
+    }
 }
