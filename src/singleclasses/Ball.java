@@ -1,4 +1,6 @@
-package singleClasses;
+package singleclasses;
+
+import java.util.Objects;
 
 public class Ball {
     private float x;
@@ -88,11 +90,11 @@ public class Ball {
     @Override
     public int hashCode() {
         int code = 17;
-        code = 31 * code + (int)x;
-        code = 31 * code + (int)y;
+        code = 31 * code + Objects.hashCode(x);
+        code = 31 * code + Objects.hashCode(y);
         code = 31 * code + radius;
-        code = 31 * code + (int)xDelta;
-        code = 31 * code + (int)yDelta;
+        code = 31 * code + Objects.hashCode(xDelta);
+        code = 31 * code + Objects.hashCode(yDelta);
         return code;
     }
 }

@@ -1,4 +1,6 @@
-package singleClasses;
+package singleclasses;
+
+import java.util.Objects;
 
 public class Rectangle {
     float length = 1.0f;
@@ -56,8 +58,8 @@ public class Rectangle {
     @Override
     public int hashCode() {
         int code = 17;
-        code = 31 * code + (int)length;
-        code = 31 * code + (int)width;
+        code = 31 * code + Objects.hashCode(length);
+        code = 31 * code + Objects.hashCode(width);
         return code;
     }
 }

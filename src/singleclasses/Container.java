@@ -1,4 +1,4 @@
-package singleClasses;
+package singleclasses;
 
 public class Container {
     private int x1;

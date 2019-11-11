@@ -1,4 +1,6 @@
-package singleClasses;
+package singleclasses;
+
+import java.util.Objects;
 
 public class MyComplex {
     private double real = 0.0;
@@ -114,8 +116,8 @@ public class MyComplex {
     @Override
     public int hashCode() {
         int code = 17;
-        code = 31 * code + (int)real;
-        code = 31 * code + (int)imag;
+        code = 31 * code + Objects.hashCode(real);
+        code = 31 * code + Objects.hashCode(imag);
         return code;
     }
 }

@@ -1,4 +1,4 @@
-package singleClasses;
+package singleclasses;
 
 public class Author {
     private String name;

@@ -1,6 +1,4 @@
-import singleClasses.*;
-import authorsAndBooks.*;
-import pointsAndTriangles.*;
+import singleclasses.*;
 
 
 public class Main {

@@ -1,4 +1,6 @@
-package singleClasses;
+package singleclasses;
+
+import java.util.Objects;
 
 public class MyPolynomial {
     private double[] coeffs;
@@ -97,7 +99,7 @@ public class MyPolynomial {
     public int hashCode() {
         int code = 17;
         for (int i = 0; i < coeffs.length; i++) {
-            code = 31 * code + (int)coeffs[i];
+            code = 31 * code + Objects.hashCode(coeffs[i]);
         }
         return code;
     }

@@ -1,4 +1,4 @@
-package singleClasses;
+package singleclasses;
 
 public class MyPoint {
     private int x = 0;

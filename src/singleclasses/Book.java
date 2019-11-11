@@ -1,4 +1,6 @@
-package singleClasses;
+package singleclasses;
+
+import java.util.Objects;
 
 public class Book {
     private String name;
@@ -87,7 +89,7 @@ public class Book {
     public int hashCode() {
         int code = 17;
         code = 31 * code + name.hashCode();
-        code = 31 * code + (int)price;
+        code = 31 * code + Objects.hashCode(price);
         code = 31 * code + qty;
         for (int i = 0; i < authors.length; i++) {
             code = 31 * code + authors[i].hashCode();

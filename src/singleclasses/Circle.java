@@ -1,4 +1,6 @@
-package singleClasses;
+package singleclasses;
+
+import java.util.Objects;
 
 public class Circle {
     private double radius = 1.0;
@@ -57,7 +59,7 @@ public class Circle {
     @Override
     public int hashCode() {
         int code = 17;
-        code = 31 * code + (int)radius;
+        code = 31 * code + Objects.hashCode(radius);
         code = 31 * code + color.hashCode();
         return  code;
     }
