@@ -35,20 +35,20 @@ public class MyPolynomial {
     }
 
     public MyPolynomial add(MyPolynomial right) {
-        int length = (this.coeffs.length > right.coeffs.length)? this.coeffs.length : right.coeffs.length;
-        double[] answerCoeffs = new double[length];
+        int answerLength = (this.coeffs.length > right.coeffs.length)? this.coeffs.length : right.coeffs.length;
+        double[] answerCoeffs = new double[answerLength];
         int minLength = (this.coeffs.length < right.coeffs.length)? this.coeffs.length : right.coeffs.length;
 
         for (int i = 0; i < minLength; i++) {
             answerCoeffs[i] = this.coeffs[i] + right.coeffs[i];
         }
         if (this.coeffs.length > minLength) {
-            for (int i = minLength; i < length; i++) {
+            for (int i = minLength; i < answerLength; i++) {
                 answerCoeffs[i] = this.coeffs[i];
             }
         }
         else if (right.coeffs.length > minLength) {
-            for (int i = minLength; i < length; i++) {
+            for (int i = minLength; i < answerLength; i++) {
                 answerCoeffs[i] = right.coeffs[i];
             }
         }
@@ -58,9 +58,9 @@ public class MyPolynomial {
     }
 
     public MyPolynomial multiply(MyPolynomial right) {
-        int length = this.coeffs.length + right.coeffs.length;
-        double[] answerCoeffs = new double[length];
-        for (int i = 0; i < length; i++) {
+        int answerLength = this.coeffs.length + right.coeffs.length;
+        double[] answerCoeffs = new double[answerLength];
+        for (int i = 0; i < answerLength; i++) {
             answerCoeffs[i] = 0;
         }
 
